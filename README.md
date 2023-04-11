@@ -1,6 +1,6 @@
 # codeigniter-webapp
 
-
+Template codeigniter repo. just clone or use as started base
 
 ## Getting started
 
