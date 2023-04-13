@@ -1,38 +1,39 @@
 	<h1>Welcome/Bienvenido a VNX Codeigniter</h1>
-	<p >Ejemplo de tabla, con datatables y campos input con selects:</p>
+	<p >Ejemplo de login con imap</p>
 	<?php
+	$errormesag = 'Sin novedades';
+	if($this->session->flashdata("error")){
+		$errormesag = $this->session->flashdata("error");
+	}
+	$formopen = form_open("Indexauth/auth/login", array('method'=> 'post', 'class' => 'needs-validation w-75 mx-auto my-auto'));
 		echo br().PHP_EOL;  // genera neuva linea en codigo html al navegador
 		echo form_fieldset('titulo marco',array('class'=>'containerin ') );
-		$this->table->clear();
-		    // para definir bordes, se debe proveer un template con border=1 o pasar en el mismo una clase/estilo css
-			$this->table->set_template(array ( 'table_open'  => '<table border="1" cellpadding="2" cellspacing="2" class="table">','cell_start' => '<td class="btn-large">' ) );
-		// can be: $this->table->set_datatables();  // default values if not set any as array: array("sortable" => "true", "searchable" => "true", "fixedHeight" => "true", "perPage" => "100", "perPageSelect"=>"false", "fixedColumns" = "false" );
-//		$this->table->set_datatables( array("sortable" => "true", "searchable" => "true", "fixedHeight" => "true", "perPage" => "10", "fixedColumns" => "false" ) );
-			$this->table->set_heading('col1: ','col2');
-			$this->table->add_row('celda y alla campo select autogenerado:', form_dropdown('cod_subcategoria', array('1', '2', 'otr'),null,'id="list_subcategoria"'));
-			$this->table->add_row('celda tabla2: ','otra celsa22');
-			$this->table->add_row('celda tabla3: ','otra celsa23');
-			$this->table->add_row('celda tabla2: ','otra celsa22');
-			$this->table->add_row('celda tabla3: ','otra celsa23');
-			$this->table->add_row('celda tabla2: ','otra celsa22');
-			$this->table->add_row('celda tabla3: ','otra celsa23');
-			$this->table->add_row('celda tabla2: ','otra celsa22');
-			$this->table->add_row('celda tabla3: ','otra celsa23');
-			$this->table->add_row('celda tabla4: ','otra celsa24');
-			$this->table->add_row('celda tabla2: ','otra celsa22');
-			$this->table->add_row('celda tabla3: ','otra celsa23');
-			$this->table->add_row('celda tabla4: ','otra celsa24');
-			$this->table->add_row('celda tabla2: ','otra celsa22');
-			$this->table->add_row('celda tabla3: ','otra celsa23');
-			$this->table->add_row('celda tabla4: ','otra celsa24');
-			$this->table->add_row('celda tabla2: ','otra celsa22');
-			$this->table->add_row('celda tabla3: ','otra celsa23');
-			$this->table->add_row('celda tabla4: ','otra celsa24');
-			$this->table->add_row('celda tabla2: ','otra celsa22');
-			$this->table->add_row('celda tabla3: ','otra celsa23');
-			$this->table->add_row('celda tabla4: ','otra celsa24');
-		echo $this->table->generate();
-		echo form_hidden('campooculto','valoroculto').br().PHP_EOL;
-		echo form_submit('nombreboton', 'boton enviar', 'class="btn-primary btn"');
+		echo '<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<div class="login-panel panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="glyphicon glyphicon-lock"></span> Login
+						</h3>
+					</div>
+					<div class="panel-body">
+						'.$formopen.'
+							<fieldset>
+								<div class="form-group">
+									<input class="form-control" placeholder="Email" type="email" name="username" required>
+								</div>
+								<div class="form-group">
+									<input class="form-control" placeholder="Password" type="password" name="userclave" required>
+								</div>
+								<button type="submit" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+					<div class="alert alert-danger text-center" style="margin-top:20px;">
+						'.$errormesag.'
+					</div>
+			</div>
+		</div>
+		';
 		echo form_fieldset_close() . PHP_EOL;
 	?>
