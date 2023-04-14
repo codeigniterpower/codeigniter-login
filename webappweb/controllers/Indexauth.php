@@ -1,17 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Indexauth extends CI_Controller {
-
-	private $sessobj;
+class Indexauth extends CP_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->helper(array('form', 'url','html'));
-		$this->load->library('table');
-		$this->load->library('session');
-		$this->sessobj = $this->session->userdata('userdata');
-		$this->output->enable_profiler(TRUE);
 	}
 
 	/**	http://127.0.0.1/codeigniterpower/index.php/indexcontroler/index */

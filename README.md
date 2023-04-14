@@ -65,6 +65,9 @@ its necesary to provide functionality, and `$rs_access` is the result of the DB 
 Since version 3.0.0 a imap mail layer was added so an extra files are at `webappweb/libraries/Imap.php` 
 and `webappweb/config/imap.php`, `$im_access` is the result of the mail login check.
 
+Since version 4.0.0 a main controller do the check work of the sesion at `webappweb/core/CP_Controller.php`
+that all controllers inherit, so `$this->checksession();` is common functionality and reusable code.
+
 #### Process simple login
 
 This is the main entry controller, it will load the views of login form page 
