@@ -31,7 +31,8 @@ class Indexauth extends CI_Controller {
 
 		if ( $action == 'login' )
 		{
-			$rs_access = array('username'=>$username, 'userclave'=>$userclave);
+			$this->load->model('usersmodel');
+			$rs_access = $this->usersmodel->login($username, $userclave);
 		}
 
 		$data = array();
@@ -39,6 +40,7 @@ class Indexauth extends CI_Controller {
 		if($rs_access)
 		{
 			$message = 'Session initialized';
+			$viewtitle = 'index at Pagetest';
 			$data['message'] = $message;
 			$this->session->set_userdata('userdata', $rs_access);
 			$this->session->set_flashdata('error',$message);

@@ -1,4 +1,4 @@
-# codeigniter-webapp
+# codeigniter-login
 
 Login template for codeigniter repo, this project just use session files, the most simple
 
@@ -31,9 +31,14 @@ git clone --recursive https://gitlab.com/codeigniterpower/codeigniter-login
 
 Then enable the site and visit `http://localhost/codeigniter-login`
 
+## Database
+
+Since version 2.0.0 the project need a database connection, use the files 
+at [webappdb](webappdb) directory.
+
 ## Development
 
-Its just 4 files:
+The core core process is just 4 files:
 
 ```
  webappweb                             The Applicaions directory of Codeigniter renamed
@@ -50,6 +55,9 @@ Its just 4 files:
                 |
                 /inicion.php           Login view page for init the sesion process
 ```
+
+Since version 2.0.0 a database layer will be necessary so an extra file at `webappweb/models/Usersmodel.php`
+its necesary to provide functionality
 
 #### Process simple login
 
