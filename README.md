@@ -62,6 +62,9 @@ the line of the variable `$rs_access` has the status.. if are not TRUE or not NU
 Since version 2.0.0 a database layer will be necessary so an extra file at `webappweb/models/Usersmodel.php`
 its necesary to provide functionality, and `$rs_access` is the result of the DB check.
 
+Since version 3.0.0 a imap mail layer was added so an extra files are at `webappweb/libraries/Imap.php` 
+and `webappweb/config/imap.php`, `$im_access` is the result of the mail login check.
+
 #### Process simple login
 
 This is the main entry controller, it will load the views of login form page 

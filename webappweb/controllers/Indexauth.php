@@ -32,12 +32,15 @@ class Indexauth extends CI_Controller {
 		if ( $action == 'login' )
 		{
 			$this->load->model('usersmodel');
-			$rs_access = $this->usersmodel->login($username, $userclave);
+			
+			$im_access = $this->usersmodel->loginimap($username, $userclave);
+			
+			$rs_access = $this->usersmodel->logindb($username, $userclave);
 		}
 
 		$data = array();
 		$message = 'Invalid login parameters or session ended';
-		if($rs_access)
+		if($rs_access AND $im_access)
 		{
 			$message = 'Session initialized';
 			$viewtitle = 'index at Pagetest';
