@@ -38,7 +38,7 @@ at [webappdb](webappdb) directory.
 
 ## Development
 
-The core core process is just 4 files:
+The core core process is just 4 files, complete documented at the [LOGIN.md](LOGIN.md) document:
 
 ```
  webappweb                             The Applicaions directory of Codeigniter renamed
@@ -68,6 +68,8 @@ and `webappweb/config/imap.php`, `$im_access` is the result of the mail login ch
 Since version 4.0.0 a main controller do the check work of the sesion at `webappweb/core/CP_Controller.php`
 that all controllers inherit, so `$this->checksession();` is common functionality and reusable code.
 
+For mode detailed please read the [LOGIN.md](LOGIN.md) document
+
 #### Profiler and debugging
 
 Debugging is using our profiler, it requires a special view which is not part of the project 
@@ -89,7 +91,7 @@ process of the credentials.
                                                  |---->Indexauth/index (fail)
 ```
 
-The magic is done by the `auth($data = NULL, ... , ... )` 
+For mode detailed please read the [LOGIN.md](LOGIN.md) document
 
 ## Authors and acknowledgment
 
