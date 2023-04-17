@@ -68,6 +68,15 @@ and `webappweb/config/imap.php`, `$im_access` is the result of the mail login ch
 Since version 4.0.0 a main controller do the check work of the sesion at `webappweb/core/CP_Controller.php`
 that all controllers inherit, so `$this->checksession();` is common functionality and reusable code.
 
+#### Profiler and debugging
+
+Debugging is using our profiler, it requires a special view which is not part of the project 
+so it is provided as an extra file in the [vendor](vendor) directory, just take it and put it on 
+the views directory and profiler will work.
+
+Until version 3.9.9 it can be simply disabled in the controller constructor, since version 4.0.0 
+it is disabled in the core controller constructor inherited by the other controllers.
+
 #### Process simple login
 
 This is the main entry controller, it will load the views of login form page 
