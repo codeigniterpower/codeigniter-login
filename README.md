@@ -56,8 +56,8 @@ The core core process is just 4 files:
                 /inicion.php           Login view page for init the sesion process
 ```
 
-Until version 1.0.0 the ckech per se is made at the file `Indexauth.php` in the auth function.. 
-the line of the variable `$rs_access` has the status.. if are not TRUE or not NULL the check is passed.
+Until version 1.0.0 the check per se is made at the file `Indexauth.php` in the auth function.. 
+the line of the variable `$rs_access` has the status.. if not TRUE or not NULL the check is passed.
 
 Since version 2.0.0 a database layer will be necessary so an extra file at `webappweb/models/Usersmodel.php`
 its necesary to provide functionality, and `$rs_access` is the result of the DB check.
@@ -76,7 +76,7 @@ process of the credentials.
 
 ```
 ->user/pass--->Indexauth/index--->Indexauth/auth()---->Indexhome/index (sucess)
-                                                 |
+                                    (check)      |
                                                  |---->Indexauth/index (fail)
 ```
 
