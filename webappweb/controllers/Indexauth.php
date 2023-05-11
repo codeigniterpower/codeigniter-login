@@ -27,7 +27,7 @@ class Indexauth extends CP_Controller {
 			
 			$im_access = TRUE;//$this->usersmodel->loginimap($username, $userclave);
 			
-			$rs_access = array('user'=>'pepe');//$this->usersmodel->logindb($username, $userclave);
+			$rs_access = $this->usersmodel->logindb($username, $userclave);
 		}
 
 		$data = array();
