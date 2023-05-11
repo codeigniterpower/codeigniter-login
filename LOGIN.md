@@ -1,9 +1,19 @@
 # codeigniter-login files
 
+The login process uses a Controller that process the login and logout, 
+such controller implements the check that currently are into a model, 
+but you can change it to another class or just a if-else or whatever check.
+
+There's no need if you want, you can setup a method in the `webappweb/models/Usersmodel.php`
+that just use your own storage, user check or way to autenticate the user data.
+
+By default this project uses a embebed sqlite3 database, that you can 
+change or move it.
+
 ## Database
 
 Since version 2.0.0 the project need a database connection, use the files 
-at [webappdb](webappdb) directory.
+at `webappdb` directory.
 
 Until version 1.0.0 the check per se is made at the file `Indexauth.php` in the auth function.. 
 the line of the variable `$rs_access` has the status.. if not TRUE or not NULL the check is passed.
@@ -16,6 +26,9 @@ and `webappweb/config/imap.php`, `$im_access` is the result of the mail login ch
 
 Since version 4.0.0 a main controller do the check work of the sesion at `webappweb/core/CP_Controller.php`
 that all controllers inherit, so `$this->checksession();` is common functionality and reusable code.
+
+Since version 5.0.0 the project provide a sqlite database, by default its 
+at `webappdb/codeigniter.db` and extra view/controller are show to noted more the sesion handle.
 
 ## Development
 
@@ -112,12 +125,12 @@ The magic is done by the `auth($data = NULL, ... , ... )`
 
 ## Authors and acknowledgment
 
-Show your appreciation to those who have contributed to the project.
+* (c) PICCORO Lenz McKAY @mckaygerhard
 
 ## License
 
-For open source projects, say how it is licensed.
+CC-BY-SA
 
-## Project status
+## see also
 
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+[README.md](README.md)

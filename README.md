@@ -4,7 +4,11 @@ Login template for codeigniter repo, this project just use session files, the mo
 
 The project its at https://gitlab.com/codeigniterpower/codeigniter-login
 
-## Installation
+## How to use:
+
+The project is just 4 files in fact, check [Development](#development) section in this document.
+
+#### Installation
 
 Just clone the repo:
 
@@ -12,29 +16,35 @@ Just clone the repo:
 mkdir ~/Devel && ~/Devel
 
 git clone --recursive https://gitlab.com/codeigniterpower/codeigniter-login
-
 ```
 
 Then enable "user directory" module into your webserver, change "public_html" to "Devel
 and visit `http://localhost/~general/codeigniter-login`
 
-## Deploy into your webserver
+#### Deploy into your webserver
 
 Just clone the repo:
-
 ```
 mkdir /var/www/html && /var/www/html
 
 git clone --recursive https://gitlab.com/codeigniterpower/codeigniter-login
-
 ```
 
 Then enable the site and visit `http://localhost/codeigniter-login`
 
 ## Database
 
+There's no need if you want can setup a method in the [webappweb/models/Usersmodel.php](webappweb/models/Usersmodel.php) 
+that just use your own storage, user check or way to autenticate the user data.
+
+By default this project uses a embebed sqlite3 database, that you can 
+change or move it, just by configure it on [webappweb/config/database.php](webappweb/config/database.php).
+
 Since version 2.0.0 the project need a database connection, use the files 
 at [webappdb](webappdb) directory.
+
+Since version 5.0.0 the project provide a sqlite database, by default its 
+at [webappdb/codeigniter.db](webappdb/codeigniter.db).
 
 ## Development
 
@@ -68,6 +78,9 @@ and `webappweb/config/imap.php`, `$im_access` is the result of the mail login ch
 Since version 4.0.0 a main controller do the check work of the sesion at `webappweb/core/CP_Controller.php`
 that all controllers inherit, so `$this->checksession();` is common functionality and reusable code.
 
+Since version 5.0.0 the project provide a sqlite database, by default its 
+at `webappdb/codeigniter.db` and extra view are show to noted more the sesion handle.
+
 For mode detailed please read the [LOGIN.md](LOGIN.md) document
 
 #### Profiler and debugging
@@ -95,12 +108,9 @@ For mode detailed please read the [LOGIN.md](LOGIN.md) document
 
 ## Authors and acknowledgment
 
-Show your appreciation to those who have contributed to the project.
+* (c) PICCORO Lenz McKAY @mckaygerhard
 
 ## License
 
-For open source projects, say how it is licensed.
+CC-BY-SA
 
-## Project status
-
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
