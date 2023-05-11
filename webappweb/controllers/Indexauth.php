@@ -7,7 +7,6 @@ class Indexauth extends CP_Controller {
 		parent::__construct();
 	}
 
-	/**	http://127.0.0.1/codeigniterpower/index.php/indexcontroler/index */
 	public function index($data = NULL)
 	{
 		$this->load->view('header.php',$data);
@@ -17,7 +16,7 @@ class Indexauth extends CP_Controller {
 
 	public function auth($action = 'logout', $username = NULL, $userclave = NULL)
 	{
-		if($usernname == NULL)
+		if($username == NULL)
 			$username = $this->input->post('username');
 		if($userclave == NULL)
 			$userclave = $this->input->post('userclave');
@@ -26,27 +25,20 @@ class Indexauth extends CP_Controller {
 		{
 			$this->load->model('usersmodel');
 			
-			$im_access = $this->usersmodel->loginimap($username, $userclave);
+			$im_access = TRUE;//$this->usersmodel->loginimap($username, $userclave);
 			
-			$rs_access = $this->usersmodel->logindb($username, $userclave);
+			$rs_access = array('user'=>'pepe');//$this->usersmodel->logindb($username, $userclave);
 		}
 
 		$data = array();
-		$message = 'Invalid login parameters or session ended';
 		if($rs_access AND $im_access)
 		{
-			$message = 'Session initialized';
-			$viewtitle = 'index at Pagetest';
-			$data['message'] = $message;
 			$this->session->set_userdata('userdata', $rs_access);
-			$this->session->set_flashdata('error',$message);
 			redirect('Indexhome');
 		}
 		else
 		{
-			$data['message'] = $message;
 			$this->session->sess_destroy();
-			$this->session->set_flashdata('error',$message);
 			header('location:'.site_url('/Indexauth'));
 		}
 	}
