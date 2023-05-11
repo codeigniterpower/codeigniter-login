@@ -19,7 +19,7 @@
 						'.$formopen.'
 							<fieldset>
 								<div class="form-group">
-									<input class="form-control" placeholder="Email" type="email" name="username" required>
+									<input class="form-control" placeholder="Email" type="input" name="username" required>
 								</div>
 								<div class="form-group">
 									<input class="form-control" placeholder="Password" type="password" name="userclave" required>
