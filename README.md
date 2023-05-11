@@ -114,3 +114,6 @@ For mode detailed please read the [LOGIN.md](LOGIN.md) document
 
 CC-BY-SA
 
+## status
+
+Released.
