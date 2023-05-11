@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Indexhome extends CP_Controller {
+class Indexother extends CP_Controller {
 
 	function __construct()
 	{
@@ -12,18 +12,18 @@ class Indexhome extends CP_Controller {
 	public function index()
 	{
 		$data = array();
-		$data['viewtitle'] = 'index at Indexhome index function';
+		$data['viewtitle'] = 'index at IndexOther at index';
 		$this->load->view('header.php',$data);
-		$this->load->view('homesview.php',$data);
+		$this->load->view('homesother.php',$data);
 		$this->load->view('footer.php',$data);
 	}
 
 	public function testfunct()
 	{
 		$data = array();
-		$data['viewtitle'] = 'testfunc at Indexhome testfunct function';
+		$data['viewtitle'] = 'testfunc at IndexOther at testfunct';
 		$this->load->view('header.php',$data);
-		$this->load->view('homesview.php',$data);
+		$this->load->view('homesother.php',$data);
 		$this->load->view('footer.php',$data);
 	}
 }
